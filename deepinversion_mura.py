@@ -124,6 +124,9 @@ def get_images(net, bs=256, epochs=1000, idx=-1, var_scale=0.00005,
     else:
         targets = torch.LongTensor([random.randint(0,1) for _ in range(bs)]).to('cuda')
 	#targets = torch.LongTensor([0, 1] * 25).to('cuda')
+    
+
+    best_targets = []
 
     ## Create hooks for feature statistics catching
     loss_r_feature_layers = []
@@ -194,12 +197,17 @@ def get_images(net, bs=256, epochs=1000, idx=-1, var_scale=0.00005,
         if debug_output and epoch % 200==0:
             print(
                 f"It {epoch}\t Losses: total: {loss.item():3.3f},\ttarget: {loss_target:3.3f} \tR_feature_loss unscaled:\t {loss_distr.item():3.3f}")
-            vutils.save_image(inputs.data.clone(),
-                              './{}/output_{}.png'.format(prefix, epoch // 200),
-                              normalize=True, scale_each=True, nrow=10)
+            
+            for i in range(inputs.data.size(0)):
+
+                vutils.save_image(inputs.data[i,:,:,:],
+                                  './{}/{}.png'.format(prefix,str(epoch)+str(i)),
+                                  normalize=True, scale_each=True)
+
         if best_cost > loss.item():
             best_cost = loss.item()
             best_inputs = inputs.data
+            best_targets = targets
 
         # backward pass
         if use_amp:
@@ -225,9 +233,19 @@ def get_images(net, bs=256, epochs=1000, idx=-1, var_scale=0.00005,
         name_use = prefix + "best_images"
     next_batch = len(glob.glob("./%s/*.png" % "best_images")) // 1
 
-    vutils.save_image(best_inputs[:20].clone(),
-                      './{}/output_{}.png'.format(name_use, next_batch),
-                      normalize=True, scale_each = True, nrow=10)
+    #vutils.save_image(best_inputs[:20].clone(),
+                      #'./{}/output_{}.png'.format(name_use, next_batch),
+                      #normalize=True, scale_each = True, nrow=10)
+
+    print(best_inputs.size())
+
+    for i in range(best_inputs.size(0)):
+        torchvision.utils.save_image(best_inputs[i, :, :, :], './{}/.png'.format(prefix+"best_images", i))
+
+
+    print("############################################")
+    print("Best Targets -- - ")
+    print(best_targets)
 
     if train_writer is not None:
         train_writer.add_scalar('gener_teacher_criteria', criterion(outputs, targets), global_iteration)
@@ -270,7 +288,7 @@ def load_model(m):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='PyTorch CIFAR10 DeepInversion')
     parser.add_argument('--bs', default=256, type=int, help='batch size')
-    parser.add_argument('--iters_mi', default=20000, type=int, help='number of iterations for model inversion')
+    parser.add_argument('--iters_mi', default=10000, type=int, help='number of iterations for model inversion')
     parser.add_argument('--cig_scale', default=0.0, type=float, help='competition score')
     parser.add_argument('--di_lr', default=0.1, type=float, help='lr for deep inversion')
     parser.add_argument('--di_var_scale', default=2.5e-5, type=float, help='TV L2 regularization coefficient')
@@ -351,5 +369,3 @@ inputs = get_images(net=net_teacher, bs=args.bs, epochs=args.iters_mi, idx=batch
                     train_writer=train_writer, global_iteration=global_iteration, use_amp=args.amp,
                     optimizer=optimizer_di, inputs=inputs, bn_reg_scale=args.r_feature_weight,
                     var_scale=args.di_var_scale, random_labels=False, l2_coeff=args.di_l2_scale)
-
-
