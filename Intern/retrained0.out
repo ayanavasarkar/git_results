@@ -1,0 +1,11 @@
+ADAM 0.0005
+Model Loaded Resnet18
+Traceback (most recent call last):
+  File "mura_retrain.py", line 220, in <module>
+    model.load_state_dict(checkpoint['state_dict'])
+  File "/home/ayanavasarka/anaconda3/envs/py3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 847, in load_state_dict
+    self.__class__.__name__, "\n\t".join(error_msgs)))
+RuntimeError: Error(s) in loading state_dict for ResNet:
+	Missing key(s) in state_dict: "fc.2.weight", "fc.2.bias". 
+	size mismatch for fc.0.weight: copying a param with shape torch.Size([128, 512]) from checkpoint, the shape in current model is torch.Size([2, 512]).
+	size mismatch for fc.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([2]).

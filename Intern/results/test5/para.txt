@@ -1,0 +1,1 @@
+64 bs, 50 step size, frozen layers, 0.005 lr

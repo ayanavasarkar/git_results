@@ -1,0 +1,1107 @@
+ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Sequential(
+    (0): Linear(in_features=512, out_features=2, bias=True)
+  )
+)
+Epoch 0/49
+----------
+train 0
+train Loss: 0.6242 Acc: 0.6560
+0.0 tensor(0.6560, dtype=torch.float64)
+val 0
+val Loss: 0.6089 Acc: 0.6819
+[0.         0.         0.         ... 0.99880024 0.99880024 1.        ] [0.00000000e+00 6.53594771e-04 1.83006536e-02 ... 9.99346405e-01
+ 1.00000000e+00 1.00000000e+00] [8.47811699 7.47811699 3.1778698  ... 0.18204179 0.16301811 0.15321678] 0.7069131271784859
+              precision    recall  f1-score   support
+
+           0       0.65      0.86      0.74      1667
+           1       0.77      0.48      0.59      1530
+
+    accuracy                           0.68      3197
+   macro avg       0.71      0.67      0.67      3197
+weighted avg       0.70      0.68      0.67      3197
+
+tensor(0.6560, dtype=torch.float64) tensor(0.6819, dtype=torch.float64)
+
+Epoch 1/49
+----------
+train 1
+train Loss: 0.6060 Acc: 0.6802
+val 1
+val Loss: 0.5907 Acc: 0.6850
+[0.         0.         0.         ... 0.99970006 0.99970006 1.        ] [0.00000000e+00 3.26797386e-04 1.99346405e-02 ... 9.99673203e-01
+ 1.00000000e+00 1.00000000e+00] [9.59833622 8.59833622 3.84823585 ... 0.15321678 0.15194283 0.14946598] 0.7100424032840491
+              precision    recall  f1-score   support
+
+           0       0.66      0.80      0.72      3334
+           1       0.72      0.56      0.63      3060
+
+    accuracy                           0.68      6394
+   macro avg       0.69      0.68      0.68      6394
+weighted avg       0.69      0.68      0.68      6394
+
+tensor(0.6819, dtype=torch.float64) tensor(0.6850, dtype=torch.float64)
+
+Epoch 2/49
+----------
+train 2
+train Loss: 0.5997 Acc: 0.6822
+val 2
+val Loss: 0.5873 Acc: 0.6897
+[0.         0.         0.         ... 0.99920016 0.99920016 1.        ] [0.00000000e+00 2.17864924e-04 5.44662309e-03 ... 9.99782135e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.15321678  0.15194283
+  0.13296984] 0.7128051296058872
+              precision    recall  f1-score   support
+
+           0       0.67      0.79      0.72      5001
+           1       0.71      0.57      0.64      4590
+
+    accuracy                           0.69      9591
+   macro avg       0.69      0.68      0.68      9591
+weighted avg       0.69      0.69      0.68      9591
+
+tensor(0.6850, dtype=torch.float64) tensor(0.6897, dtype=torch.float64)
+
+Epoch 3/49
+----------
+train 3
+train Loss: 0.5995 Acc: 0.6813
+val 3
+val Loss: 0.6559 Acc: 0.6522
+[0.         0.         0.         ... 0.99955009 0.99955009 1.        ] [0.00000000e+00 1.63398693e-04 4.41176471e-03 ... 9.99509804e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.12207565  0.11062556
+  0.08779073] 0.7073398678107515
+              precision    recall  f1-score   support
+
+           0       0.65      0.83      0.73      6668
+           1       0.73      0.51      0.60      6120
+
+    accuracy                           0.68     12788
+   macro avg       0.69      0.67      0.67     12788
+weighted avg       0.69      0.68      0.67     12788
+
+
+Epoch 4/49
+----------
+train 4
+train Loss: 0.5979 Acc: 0.6812
+val 4
+val Loss: 0.6084 Acc: 0.6828
+[0.         0.         0.         ... 0.99964007 0.99964007 1.        ] [0.00000000e+00 1.30718954e-04 4.31372549e-03 ... 9.99869281e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11562672  0.11062556
+  0.08779073] 0.7101258101320912
+              precision    recall  f1-score   support
+
+           0       0.65      0.84      0.73      8335
+           1       0.74      0.51      0.60      7650
+
+    accuracy                           0.68     15985
+   macro avg       0.69      0.67      0.67     15985
+weighted avg       0.69      0.68      0.67     15985
+
+
+Epoch 5/49
+----------
+train 5
+train Loss: 0.5885 Acc: 0.6904
+tensor(0.6897, dtype=torch.float64) tensor(0.6904, dtype=torch.float64)
+val 5
+val Loss: 0.6083 Acc: 0.6844
+[0.         0.         0.         ... 0.99960008 0.99960008 1.        ] [0.00000000e+00 1.08932462e-04 4.46623094e-03 ... 9.99891068e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11218226  0.11062556
+  0.08779073] 0.7123634695718808
+              precision    recall  f1-score   support
+
+           0       0.65      0.84      0.73     10002
+           1       0.75      0.50      0.60      9180
+
+    accuracy                           0.68     19182
+   macro avg       0.70      0.67      0.67     19182
+weighted avg       0.70      0.68      0.67     19182
+
+
+Epoch 6/49
+----------
+train 6
+train Loss: 0.5872 Acc: 0.6916
+tensor(0.6904, dtype=torch.float64) tensor(0.6916, dtype=torch.float64)
+val 6
+val Loss: 0.6040 Acc: 0.6878
+[0.         0.         0.         ... 0.99965721 0.99965721 1.        ] [0.00000000e+00 9.33706816e-05 4.57516340e-03 ... 9.99906629e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11218226  0.11062556
+  0.08779073] 0.7140620295308685
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     11669
+           1       0.75      0.50      0.60     10710
+
+    accuracy                           0.68     22379
+   macro avg       0.70      0.67      0.67     22379
+weighted avg       0.70      0.68      0.67     22379
+
+
+Epoch 7/49
+----------
+train 7
+train Loss: 0.5846 Acc: 0.6943
+tensor(0.6916, dtype=torch.float64) tensor(0.6943, dtype=torch.float64)
+val 7
+val Loss: 0.5928 Acc: 0.6913
+[0.         0.         0.         ... 0.99970006 0.99970006 1.        ] [0.00000000e+00 8.16993464e-05 4.82026144e-03 ... 9.99918301e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.7153529986404681
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     13336
+           1       0.75      0.50      0.60     12240
+
+    accuracy                           0.68     25576
+   macro avg       0.70      0.67      0.67     25576
+weighted avg       0.70      0.68      0.67     25576
+
+
+Epoch 8/49
+----------
+train 8
+train Loss: 0.5848 Acc: 0.6960
+tensor(0.6943, dtype=torch.float64) tensor(0.6960, dtype=torch.float64)
+val 8
+val Loss: 0.5955 Acc: 0.6881
+[0.         0.         0.         ... 0.99973339 0.99973339 1.        ] [0.00000000e+00 7.26216412e-05 5.01089325e-03 ... 9.99927378e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.716195272201914
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     15003
+           1       0.75      0.50      0.60     13770
+
+    accuracy                           0.68     28773
+   macro avg       0.70      0.68      0.67     28773
+weighted avg       0.70      0.68      0.67     28773
+
+
+Epoch 9/49
+----------
+train 9
+train Loss: 0.5839 Acc: 0.6956
+val 9
+val Loss: 0.6119 Acc: 0.6816
+[0.         0.         0.         ... 0.99964007 0.99964007 1.        ] [0.00000000e+00 6.53594771e-05 4.96732026e-03 ... 9.99934641e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.7167417379269244
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     16670
+           1       0.75      0.50      0.60     15300
+
+    accuracy                           0.68     31970
+   macro avg       0.70      0.67      0.67     31970
+weighted avg       0.70      0.68      0.67     31970
+
+
+Epoch 10/49
+----------
+train 10
+train Loss: 0.5871 Acc: 0.6940
+val 10
+val Loss: 0.5995 Acc: 0.6891
+[0.         0.         0.         ... 0.99967279 0.99967279 1.        ] [0.00000000e+00 5.94177065e-05 4.93166964e-03 ... 9.99940582e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.7175781891101929
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     18337
+           1       0.76      0.50      0.60     16830
+
+    accuracy                           0.68     35167
+   macro avg       0.70      0.68      0.67     35167
+weighted avg       0.70      0.68      0.67     35167
+
+
+Epoch 11/49
+----------
+train 11
+train Loss: 0.5837 Acc: 0.6948
+val 11
+val Loss: 0.5947 Acc: 0.6900
+[0.         0.         0.         ... 0.99970006 0.99970006 1.        ] [0.00000000e+00 5.44662309e-05 4.84749455e-03 ... 9.99945534e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.7181632940841025
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     20004
+           1       0.76      0.50      0.60     18360
+
+    accuracy                           0.68     38364
+   macro avg       0.70      0.68      0.67     38364
+weighted avg       0.70      0.68      0.67     38364
+
+
+Epoch 12/49
+----------
+train 12
+train Loss: 0.5858 Acc: 0.6944
+val 12
+val Loss: 0.6019 Acc: 0.6897
+[0.         0.         0.         ... 0.99967699 0.99967699 1.        ] [0.00000000e+00 5.02765209e-05 4.82654600e-03 ... 9.99949723e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.7187645079175371
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     21671
+           1       0.76      0.50      0.60     19890
+
+    accuracy                           0.68     41561
+   macro avg       0.70      0.68      0.67     41561
+weighted avg       0.70      0.68      0.67     41561
+
+
+Epoch 13/49
+----------
+train 13
+train Loss: 0.5827 Acc: 0.6981
+tensor(0.6960, dtype=torch.float64) tensor(0.6981, dtype=torch.float64)
+val 13
+val Loss: 0.6004 Acc: 0.6903
+[0.         0.         0.         ... 0.99961436 0.99961436 1.        ] [0.00000000e+00 4.66853408e-05 4.90196078e-03 ... 9.99953315e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.719524571476261
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     23338
+           1       0.76      0.50      0.60     21420
+
+    accuracy                           0.68     44758
+   macro avg       0.70      0.68      0.67     44758
+weighted avg       0.70      0.68      0.67     44758
+
+
+Epoch 14/49
+----------
+train 14
+train Loss: 0.5827 Acc: 0.6971
+val 14
+val Loss: 0.5959 Acc: 0.6875
+[0.         0.         0.         ... 0.99964007 0.99964007 1.        ] [0.00000000e+00 4.35729847e-05 4.83660131e-03 ... 9.99956427e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.7198954056683217
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     25005
+           1       0.76      0.50      0.60     22950
+
+    accuracy                           0.68     47955
+   macro avg       0.70      0.68      0.67     47955
+weighted avg       0.70      0.68      0.67     47955
+
+
+Epoch 15/49
+----------
+train 15
+train Loss: 0.5841 Acc: 0.6948
+val 15
+val Loss: 0.6022 Acc: 0.6885
+[0.         0.         0.         ... 0.99966257 0.99966257 1.        ] [0.00000000e+00 4.08496732e-05 4.86111111e-03 ... 9.99959150e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.7201597004434896
+              precision    recall  f1-score   support
+
+           0       0.65      0.86      0.74     26672
+           1       0.76      0.50      0.60     24480
+
+    accuracy                           0.68     51152
+   macro avg       0.71      0.68      0.67     51152
+weighted avg       0.70      0.68      0.67     51152
+
+
+Epoch 16/49
+----------
+train 16
+train Loss: 0.5833 Acc: 0.6962
+val 16
+val Loss: 0.5927 Acc: 0.6931
+[0.         0.         0.         ... 0.99968242 0.99968242 1.        ] [0.00000000e+00 3.84467512e-05 4.95963091e-03 ... 9.99961553e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.04186869 ...  0.11147992  0.11062556
+  0.08779073] 0.7204096055746445
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     28339
+           1       0.76      0.50      0.60     26010
+
+    accuracy                           0.69     54349
+   macro avg       0.71      0.68      0.67     54349
+weighted avg       0.70      0.69      0.67     54349
+
+
+Epoch 17/49
+----------
+train 17
+train Loss: 0.5821 Acc: 0.6964
+val 17
+val Loss: 0.5956 Acc: 0.6925
+[0.         0.         0.         ... 0.99970006 0.99970006 1.        ] [0.00000000e+00 3.63108206e-05 5.04720407e-03 ... 9.99963689e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.01835585 ...  0.11147992  0.11062556
+  0.08779073] 0.7206893340528215
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     30006
+           1       0.76      0.50      0.61     27540
+
+    accuracy                           0.69     57546
+   macro avg       0.71      0.68      0.67     57546
+weighted avg       0.70      0.69      0.68     57546
+
+
+Epoch 18/49
+----------
+train 18
+train Loss: 0.5859 Acc: 0.6937
+val 18
+val Loss: 0.6021 Acc: 0.6922
+[0.         0.         0.         ... 0.99971585 0.99971585 1.        ] [0.00000000e+00 3.43997248e-05 5.05675955e-03 ... 9.99965600e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.01835585 ...  0.11147992  0.11062556
+  0.08779073] 0.7210245713607808
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     31673
+           1       0.76      0.50      0.61     29070
+
+    accuracy                           0.69     60743
+   macro avg       0.71      0.68      0.67     60743
+weighted avg       0.70      0.69      0.68     60743
+
+
+Epoch 19/49
+----------
+train 19
+train Loss: 0.5845 Acc: 0.6963
+val 19
+val Loss: 0.5967 Acc: 0.6894
+[0.         0.         0.         ... 0.99973005 0.99973005 1.        ] [0.00000000e+00 3.26797386e-05 5.13071895e-03 ... 9.99967320e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.01835585 ...  0.11147992  0.11062556
+  0.08779073] 0.7211649969025802
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     33340
+           1       0.76      0.50      0.61     30600
+
+    accuracy                           0.69     63940
+   macro avg       0.71      0.68      0.67     63940
+weighted avg       0.70      0.69      0.68     63940
+
+
+Epoch 20/49
+----------
+train 20
+train Loss: 0.5848 Acc: 0.6938
+val 20
+val Loss: 0.5897 Acc: 0.6960
+[0.         0.         0.         ... 0.99974291 0.99974291 1.        ] [0.00000000e+00 3.11235605e-05 5.19763461e-03 ... 9.99968876e-01
+ 1.00000000e+00 1.00000000e+00] [14.89487362 13.89487362  6.01835585 ...  0.11147992  0.11062556
+  0.08779073] 0.721170363321849
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     35007
+           1       0.76      0.51      0.61     32130
+
+    accuracy                           0.69     67137
+   macro avg       0.71      0.68      0.67     67137
+weighted avg       0.70      0.69      0.68     67137
+
+
+Epoch 21/49
+----------
+train 21
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5858 Acc: 0.6948
+val 21
+val Loss: 0.5931 Acc: 0.6953
+[0.         0.         0.         ... 0.99975459 0.99975459 1.        ] [0.00000000e+00 2.97088532e-05 5.28817588e-03 ... 9.99970291e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01835585 ...  0.11147992  0.11062556
+  0.08779073] 0.7212121195919623
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     36674
+           1       0.76      0.51      0.61     33660
+
+    accuracy                           0.69     70334
+   macro avg       0.71      0.68      0.67     70334
+weighted avg       0.70      0.69      0.68     70334
+
+
+Epoch 22/49
+----------
+train 22
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5822 Acc: 0.6962
+val 22
+val Loss: 0.6020 Acc: 0.6888
+[0.         0.         0.         ... 0.99976526 0.99976526 1.        ] [0.00000000e+00 2.84171640e-05 5.25717533e-03 ... 9.99971583e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01835585 ...  0.11147992  0.11062556
+  0.08779073] 0.721298914908445
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     38341
+           1       0.76      0.51      0.61     35190
+
+    accuracy                           0.69     73531
+   macro avg       0.71      0.68      0.67     73531
+weighted avg       0.70      0.69      0.68     73531
+
+
+Epoch 23/49
+----------
+train 23
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5827 Acc: 0.6964
+val 23
+val Loss: 0.5946 Acc: 0.6869
+[0.         0.         0.         ... 0.99977504 0.99977504 1.        ] [0.00000000e+00 2.72331155e-05 5.22875817e-03 ... 9.99972767e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01379299 ...  0.11147992  0.11062556
+  0.08779073] 0.721402336839277
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     40008
+           1       0.76      0.51      0.61     36720
+
+    accuracy                           0.69     76728
+   macro avg       0.71      0.68      0.67     76728
+weighted avg       0.70      0.69      0.68     76728
+
+
+Epoch 24/49
+----------
+train 24
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5821 Acc: 0.6970
+val 24
+val Loss: 0.6026 Acc: 0.6894
+[0.         0.         0.         ... 0.99978404 0.99978404 1.        ] [0.00000000e+00 2.61437908e-05 5.17647059e-03 ... 9.99973856e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01379299 ...  0.11147992  0.11062556
+  0.08779073] 0.7215787007304422
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     41675
+           1       0.76      0.51      0.61     38250
+
+    accuracy                           0.69     79925
+   macro avg       0.71      0.68      0.67     79925
+weighted avg       0.70      0.69      0.68     79925
+
+
+Epoch 25/49
+----------
+train 25
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5842 Acc: 0.6941
+val 25
+val Loss: 0.5982 Acc: 0.6847
+[0.         0.         0.         ... 0.99979235 0.99979235 1.        ] [0.00000000e+00 2.51382604e-05 5.17848165e-03 ... 9.99974862e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01379299 ...  0.11147992  0.11062556
+  0.08779073] 0.721656950371151
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     43342
+           1       0.76      0.51      0.61     39780
+
+    accuracy                           0.69     83122
+   macro avg       0.71      0.68      0.67     83122
+weighted avg       0.70      0.69      0.68     83122
+
+
+Epoch 26/49
+----------
+train 26
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5825 Acc: 0.6981
+val 26
+val Loss: 0.5989 Acc: 0.6881
+[0.         0.         0.         ... 0.99977782 0.99977782 1.        ] [0.00000000e+00 2.42072137e-05 5.22875817e-03 ... 9.99975793e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01379299 ...  0.11147992  0.11062556
+  0.08779073] 0.7218368588580893
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     45009
+           1       0.76      0.51      0.61     41310
+
+    accuracy                           0.69     86319
+   macro avg       0.71      0.68      0.67     86319
+weighted avg       0.70      0.69      0.68     86319
+
+
+Epoch 27/49
+----------
+train 27
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5830 Acc: 0.6948
+val 27
+val Loss: 0.5943 Acc: 0.6881
+[0.         0.         0.         ... 0.99978576 0.99978576 1.        ] [0.00000000e+00 2.33426704e-05 5.25210084e-03 ... 9.99976657e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01379299 ...  0.11147992  0.11062556
+  0.08779073] 0.7218534266836109
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     46676
+           1       0.76      0.51      0.61     42840
+
+    accuracy                           0.69     89516
+   macro avg       0.71      0.68      0.67     89516
+weighted avg       0.70      0.69      0.68     89516
+
+
+Epoch 28/49
+----------
+train 28
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5855 Acc: 0.6934
+val 28
+val Loss: 0.5920 Acc: 0.6919
+[0.         0.         0.         ... 0.99979314 0.99979314 1.        ] [0.00000000e+00 2.25377507e-05 5.29637142e-03 ... 9.99977462e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01379299 ...  0.11147992  0.11062556
+  0.08779073] 0.7219492719860822
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     48343
+           1       0.76      0.51      0.61     44370
+
+    accuracy                           0.69     92713
+   macro avg       0.71      0.68      0.67     92713
+weighted avg       0.70      0.69      0.68     92713
+
+
+Epoch 29/49
+----------
+train 29
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5844 Acc: 0.6983
+tensor(0.6981, dtype=torch.float64) tensor(0.6983, dtype=torch.float64)
+val 29
+val Loss: 0.5933 Acc: 0.6894
+[0.         0.         0.         ... 0.99980004 0.99980004 1.        ] [0.00000000e+00 2.17864924e-05 5.33769063e-03 ... 9.99978214e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.01379299 ...  0.11147992  0.11062556
+  0.08779073] 0.7219763066994443
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     50010
+           1       0.76      0.51      0.61     45900
+
+    accuracy                           0.69     95910
+   macro avg       0.71      0.68      0.67     95910
+weighted avg       0.70      0.69      0.68     95910
+
+
+Epoch 30/49
+----------
+train 30
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5819 Acc: 0.6983
+val 30
+val Loss: 0.5972 Acc: 0.6897
+[0.         0.         0.         ... 0.99980649 0.99980649 1.        ] [0.00000000e+00 2.10837023e-05 5.31309298e-03 ... 9.99978916e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7219585745579659
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     51677
+           1       0.76      0.51      0.61     47430
+
+    accuracy                           0.69     99107
+   macro avg       0.71      0.68      0.67     99107
+weighted avg       0.70      0.69      0.68     99107
+
+
+Epoch 31/49
+----------
+train 31
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5847 Acc: 0.6957
+val 31
+val Loss: 0.5967 Acc: 0.6906
+[0.         0.         0.         ... 0.99981254 0.99981254 1.        ] [0.00000000e+00 2.04248366e-05 5.33088235e-03 ... 9.99979575e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7220625312360934
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     53344
+           1       0.76      0.51      0.61     48960
+
+    accuracy                           0.69    102304
+   macro avg       0.71      0.68      0.67    102304
+weighted avg       0.70      0.69      0.68    102304
+
+
+Epoch 32/49
+----------
+train 32
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5850 Acc: 0.6934
+val 32
+val Loss: 0.5981 Acc: 0.6888
+[0.         0.         0.         ... 0.99981822 0.99981822 1.        ] [0.00000000e+00 1.98059022e-05 5.34759358e-03 ... 9.99980194e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7221283176339759
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     55011
+           1       0.76      0.51      0.61     50490
+
+    accuracy                           0.69    105501
+   macro avg       0.71      0.68      0.67    105501
+weighted avg       0.70      0.69      0.68    105501
+
+
+Epoch 33/49
+----------
+train 33
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5850 Acc: 0.6935
+val 33
+val Loss: 0.5959 Acc: 0.6906
+[0.         0.         0.         ... 0.99982356 0.99982356 1.        ] [0.00000000e+00 1.92233756e-05 5.36332180e-03 ... 9.99980777e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7221816315887376
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     56678
+           1       0.76      0.51      0.61     52020
+
+    accuracy                           0.69    108698
+   macro avg       0.71      0.68      0.67    108698
+weighted avg       0.70      0.69      0.68    108698
+
+
+Epoch 34/49
+----------
+train 34
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5831 Acc: 0.6970
+val 34
+val Loss: 0.5972 Acc: 0.6925
+[0.         0.         0.         ... 0.99982861 0.99982861 1.        ] [0.00000000e+00 1.86741363e-05 5.37815126e-03 ... 9.99981326e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7222595311269879
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     58345
+           1       0.76      0.51      0.61     53550
+
+    accuracy                           0.69    111895
+   macro avg       0.71      0.68      0.68    111895
+weighted avg       0.70      0.69      0.68    111895
+
+
+Epoch 35/49
+----------
+train 35
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5859 Acc: 0.6935
+val 35
+val Loss: 0.5994 Acc: 0.6863
+[0.         0.         0.         ... 0.99983337 0.99983337 1.        ] [0.00000000e+00 1.81554103e-05 5.35584604e-03 ... 9.99981845e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7222898832845389
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     60012
+           1       0.76      0.51      0.61     55080
+
+    accuracy                           0.69    115092
+   macro avg       0.71      0.68      0.67    115092
+weighted avg       0.70      0.69      0.68    115092
+
+
+Epoch 36/49
+----------
+train 36
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5839 Acc: 0.6955
+val 36
+val Loss: 0.6010 Acc: 0.6875
+[0.         0.         0.         ... 0.99983787 0.99983787 1.        ] [0.00000000e+00 1.76647235e-05 5.35241123e-03 ... 9.99982335e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7222994222966088
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     61679
+           1       0.76      0.51      0.61     56610
+
+    accuracy                           0.69    118289
+   macro avg       0.71      0.68      0.67    118289
+weighted avg       0.70      0.69      0.68    118289
+
+
+Epoch 37/49
+----------
+train 37
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5826 Acc: 0.6958
+val 37
+val Loss: 0.5989 Acc: 0.6897
+[0.         0.         0.         ... 0.99984214 0.99984214 1.        ] [0.00000000e+00 1.71998624e-05 5.31475748e-03 ... 9.99982800e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7223533025457263
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     63346
+           1       0.76      0.51      0.61     58140
+
+    accuracy                           0.69    121486
+   macro avg       0.71      0.68      0.67    121486
+weighted avg       0.70      0.69      0.68    121486
+
+
+Epoch 38/49
+----------
+train 38
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5814 Acc: 0.6967
+val 38
+val Loss: 0.5941 Acc: 0.6903
+[0.         0.         0.         ... 0.99984618 0.99984618 1.        ] [0.00000000e+00 1.67588403e-05 5.36282889e-03 ... 9.99983241e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7224310656039242
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     65013
+           1       0.76      0.51      0.61     59670
+
+    accuracy                           0.69    124683
+   macro avg       0.71      0.68      0.68    124683
+weighted avg       0.70      0.69      0.68    124683
+
+
+Epoch 39/49
+----------
+train 39
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5840 Acc: 0.6956
+val 39
+val Loss: 0.5978 Acc: 0.6941
+[0.         0.         0.         ... 0.99985003 0.99985003 1.        ] [0.00000000e+00 1.63398693e-05 5.35947712e-03 ... 9.99983660e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7225033101222892
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     66680
+           1       0.76      0.51      0.61     61200
+
+    accuracy                           0.69    127880
+   macro avg       0.71      0.68      0.68    127880
+weighted avg       0.70      0.69      0.68    127880
+
+
+Epoch 40/49
+----------
+train 40
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5841 Acc: 0.6969
+val 40
+val Loss: 0.6002 Acc: 0.6875
+[0.         0.         0.         ... 0.99985369 0.99985369 1.        ] [0.00000000e+00 1.59413359e-05 5.34034752e-03 ... 9.99984059e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7225184547488211
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     68347
+           1       0.76      0.51      0.61     62730
+
+    accuracy                           0.69    131077
+   macro avg       0.71      0.68      0.68    131077
+weighted avg       0.70      0.69      0.68    131077
+
+
+Epoch 41/49
+----------
+train 41
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5838 Acc: 0.6971
+val 41
+val Loss: 0.5916 Acc: 0.6919
+[0.         0.         0.         ... 0.99985717 0.99985717 1.        ] [0.00000000e+00 1.55617803e-05 5.35325241e-03 ... 9.99984438e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7226086636525347
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     70014
+           1       0.76      0.51      0.61     64260
+
+    accuracy                           0.69    134274
+   macro avg       0.71      0.68      0.68    134274
+weighted avg       0.70      0.69      0.68    134274
+
+
+Epoch 42/49
+----------
+train 42
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5836 Acc: 0.6958
+val 42
+val Loss: 0.5879 Acc: 0.6963
+[0.         0.         0.         ... 0.99986049 0.99986049 1.        ] [0.00000000e+00 1.51998784e-05 5.39595683e-03 ... 9.99984800e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7226058470211386
+              precision    recall  f1-score   support
+
+           0       0.65      0.85      0.74     71681
+           1       0.76      0.51      0.61     65790
+
+    accuracy                           0.69    137471
+   macro avg       0.71      0.68      0.68    137471
+weighted avg       0.70      0.69      0.68    137471
+
+
+Epoch 43/49
+----------
+train 43
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5815 Acc: 0.6992
+tensor(0.6983, dtype=torch.float64) tensor(0.6992, dtype=torch.float64)
+val 43
+val Loss: 0.5929 Acc: 0.6944
+[0.         0.         0.         ... 0.99986366 0.99986366 1.        ] [0.00000000e+00 1.48544266e-05 5.42186572e-03 ... 9.99985146e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.722649862042662
+              precision    recall  f1-score   support
+
+           0       0.66      0.85      0.74     73348
+           1       0.76      0.51      0.61     67320
+
+    accuracy                           0.69    140668
+   macro avg       0.71      0.68      0.68    140668
+weighted avg       0.70      0.69      0.68    140668
+
+
+Epoch 44/49
+----------
+train 44
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5859 Acc: 0.6937
+val 44
+val Loss: 0.5971 Acc: 0.6916
+[0.         0.         0.         ... 0.99986669 0.99986669 1.        ] [0.00000000e+00 1.45243282e-05 5.38852578e-03 ... 9.99985476e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.722688009965182
+              precision    recall  f1-score   support
+
+           0       0.66      0.85      0.74     75015
+           1       0.76      0.51      0.61     68850
+
+    accuracy                           0.69    143865
+   macro avg       0.71      0.68      0.68    143865
+weighted avg       0.70      0.69      0.68    143865
+
+
+Epoch 45/49
+----------
+train 45
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5814 Acc: 0.6992
+val 45
+val Loss: 0.5952 Acc: 0.6935
+[0.         0.         0.         ... 0.99986959 0.99986959 1.        ] [0.00000000e+00 1.42085820e-05 5.41346974e-03 ... 9.99985791e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7226771722826568
+              precision    recall  f1-score   support
+
+           0       0.66      0.85      0.74     76682
+           1       0.76      0.51      0.61     70380
+
+    accuracy                           0.69    147062
+   macro avg       0.71      0.68      0.68    147062
+weighted avg       0.70      0.69      0.68    147062
+
+
+Epoch 46/49
+----------
+train 46
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5837 Acc: 0.6965
+val 46
+val Loss: 0.6013 Acc: 0.6888
+[0.         0.         0.         ... 0.99987237 0.99987237 1.        ] [0.00000000e+00 1.39062717e-05 5.40953970e-03 ... 9.99986094e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7226776383776493
+              precision    recall  f1-score   support
+
+           0       0.66      0.85      0.74     78349
+           1       0.76      0.51      0.61     71910
+
+    accuracy                           0.69    150259
+   macro avg       0.71      0.68      0.68    150259
+weighted avg       0.70      0.69      0.68    150259
+
+
+Epoch 47/49
+----------
+train 47
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5852 Acc: 0.6943
+val 47
+val Loss: 0.5950 Acc: 0.6900
+[0.         0.         0.         ... 0.99987502 0.99987502 1.        ] [0.00000000e+00 1.36165577e-05 5.39215686e-03 ... 9.99986383e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7227629714899885
+              precision    recall  f1-score   support
+
+           0       0.66      0.85      0.74     80016
+           1       0.76      0.51      0.61     73440
+
+    accuracy                           0.69    153456
+   macro avg       0.71      0.68      0.68    153456
+weighted avg       0.70      0.69      0.68    153456
+
+
+Epoch 48/49
+----------
+train 48
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5847 Acc: 0.6971
+val 48
+val Loss: 0.6013 Acc: 0.6894
+[0.         0.         0.         ... 0.99987758 0.99987758 1.        ] [0.00000000e+00 1.33386688e-05 5.38882220e-03 ... 9.99986661e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7227536795766178
+              precision    recall  f1-score   support
+
+           0       0.66      0.85      0.74     81683
+           1       0.76      0.51      0.61     74970
+
+    accuracy                           0.69    156653
+   macro avg       0.71      0.68      0.68    156653
+weighted avg       0.70      0.69      0.68    156653
+
+
+Epoch 49/49
+----------
+train 49
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+train Loss: 0.5858 Acc: 0.6926
+val 49
+mura_new_data.py:36: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+val Loss: 0.5941 Acc: 0.6938
+[0.         0.         0.         ... 0.99988002 0.99988002 1.        ] [0.00000000e+00 1.30718954e-05 5.39869281e-03 ... 9.99986928e-01
+ 1.00000000e+00 1.00000000e+00] [14.92690372 13.92690372  6.00904703 ...  0.11147992  0.11062556
+  0.08779073] 0.7227945744184496
+              precision    recall  f1-score   support
+
+           0       0.66      0.85      0.74     83350
+           1       0.76      0.51      0.61     76500
+
+    accuracy                           0.69    159850
+   macro avg       0.71      0.68      0.68    159850
+weighted avg       0.70      0.69      0.68    159850
+
+
+Training complete in 444m 35s
+Best val Acc: 0.696278
